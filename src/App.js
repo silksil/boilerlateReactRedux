@@ -1,21 +1,16 @@
 import React, { Component } from 'react';
-import { Link, Route } from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
+import Dummy from './containers/Dummy/Dummy'
 
-import Users from './containers/Users';
-
-class App extends Component {
-  render () {
-    return (
-      <div>
-        <div>
-          <Link to="/">Users</Link>
-        </div>
-        <div>
-          <Route path="/" exact component={Users} />
-        </div>
+const App = () =>  {
+  return (
+    <BrowserRouter>
+      <div className="yoman">
+        <Route path="/" component={Dummy} />
       </div>
-    );
-  }
+    </BrowserRouter>
+  );
 }
+
 
 export default App;

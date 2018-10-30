@@ -1,21 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import { BrowserRouter } from 'react-router-dom';
+import ReduxThunk from 'redux-thunk'
 
 import './index.scss';
 import App from './App';
+import reducers from './store/reducers';
 
-const app = (
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>
-);
+// First arg. includes reducer, second arg. the initial state, third arg. middleware
+const store = createStore(reducers, {}, applyMiddleware(ReduxThunk));
 
 ReactDOM.render(
-  <Provider store={createStore(reducers, {})}>
-    <App />
-  </Provider>,
-  document.querySelector('#root')
+  // Provider knows how to read changes from redux store and if state changes, all components are updated
+  <Provider store={store}><App /></Provider>,
+    document.querySelector('#root')
 );
