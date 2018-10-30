@@ -1,5 +1,9 @@
 ### Introduction
-A boilerplate that uses React, Redux and SCSS.
+A boilerplate that uses React, Redux and SCSS. Also includes:
+
+- redux-thunk
+- prop-types
+
 
 ### How it works
 At it's core, Webpack is a bundler: it takes js-files, css-files and images, and bundles it together in order to optimize it.
