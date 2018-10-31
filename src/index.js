@@ -13,7 +13,6 @@ import reducers from './store/reducers';
 const store = createStore(reducers, {}, applyMiddleware(ReduxThunk));
 
 ReactDOM.render(
-  // Provider knows how to read changes from redux store and if state changes, all components are updated
   <Provider store={store}><App /></Provider>,
     document.querySelector('#root')
 );

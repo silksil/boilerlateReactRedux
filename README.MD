@@ -1,6 +1,11 @@
 ### Introduction
 A boilerplate that uses React, Redux and SCSS.
 
+Includes:
+- PropTypes
+- Redux-Thunk
+
+
 ### How it works
 At it's core, Webpack is a bundler: it takes js-files, css-files and images, and bundles it together in order to optimize it.
 
@@ -9,8 +14,6 @@ At it's core, Webpack is a bundler: it takes js-files, css-files and images, and
 - Plugins: plugins apply on a global level => you can apply general transformation, and it happens after the loaders have done it's work.
 
 #####  Production
-To set-up production set-up you have to create a new Webpack configuration and specify the file name in the package.json. Things to change in comparison to the development webpackfile:
-- Use most efficient dev-tools.
-- Add plugins like `UglifyJsPlugin` to optimise code.  
-
-The dist folder is eventually the folder that is being put up on the production server.
+To set-up production set-up you have to create a new Webpack configuration and specify the file name in the package.json. What changes in comparison to development in production in the webpackfile is:
+- Use most efficient dev-tools: `cheap-module-source-map` instead of `cheap-module-eval-source-map`.
+- Add plugin `UglifyJsPlugin` to optimise code.  

@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { fetchDummy } from '../../store/actions/index';
 
+import './dummy.scss';
+
 class Dummy extends Component {
   componentDidMount() {
     this.props.fetchDummy();
@@ -15,9 +17,9 @@ class Dummy extends Component {
     }
 
     return (
-      <div>
-        <h1 className="yo">The Dummy Coomponent</h1>
-        <p>Awesome users on board!</p>
+      <div className="dummy-div">
+        <h1 className="big">The Dummy Coomponent</h1>
+        <p id="small">Awesome users on board!</p>
         <p>{this.props.dummy}</p>
       </div>
     );
